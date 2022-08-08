@@ -1,0 +1,37 @@
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-md-12">
+                <div class="card px-3">
+                    <div class="card-body">
+                        <h4 class="card-title" id="title"><%= result.name %></h4>
+                        <div class=""> 
+                            <form  class="add-items d-flex" action="/add" method="post">
+                                <input  name="listName" type="text" class="form-control todo-list-input" placeholder="reminder?">
+                                <input  name="list" value="<%= result.name %>" type="submit" class="add btn btn-primary font-weight-bold todo-list-add-btn" placeholder="Add" >
+                            </form>
+                            <!-- <button type="submit" form="form1" class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button> -->
+                        </div>
+                        <div class="list-wrapper">
+                            <ul class="d-flex flex-column-reverse todo-list">
+                                <% result.items.forEach((i,key) => { %>
+                                    <li id="li_<%= i.id %>">
+                                        <div class="form-check  item_<%= key %> "> 
+                                            <label class="form-check-label" >
+                                                <input class="checkbox check_<%= key %>" type="checkbox"><%= i.text %><i class="input-helper"></i>
+                                            </label>
+                                        </div>
+                                        <img data-txt="<%= result.id %>" data-ind="<%= i.id %>" class="img check_<%= key %> remove mdi mdi-close-circle-outline" src="Images/close.png" alt="" width="40", height="40">
+                                        
+                                        <!-- <i class="remove mdi mdi-close-circle-outline"></i> -->
+                                    </li>
+                               <% }); %>
+                                  
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

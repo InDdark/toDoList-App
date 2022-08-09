@@ -10,7 +10,7 @@ app.use(express.static("public"))
 app.use(bodyparser.urlencoded({extended:true}))
 // use res.render to load up an ejs view file
 
-mongoose.connect("mongodb+srv://webapp:ninja123@cluster0.ubaxz.mongodb.net/noteDB");   
+mongoose.connect("mongodb+srv://<USERNAME>:<PASSWORD>@cluster0.ubaxz.mongodb.net/noteDB");   
 let textArray = [];
 
 const noteSchema = new mongoose.Schema({
